@@ -34,6 +34,6 @@ jobs:
     - name: Build Manylinux Wheels
       uses: a-feld/python-wheels-manylinux-build@debug
       with:
-        python-versions: 'cp37-cp37m'
+        python-versions: 'cp27-cp27m cp35-cp35m cp36-cp36m cp37-cp37m cp38-cp38 cp39-cp39'
       env:
         LD_LIBRARY_PATH: /opt/rh/devtoolset-8/root/usr/lib64:/opt/rh/devtoolset-8/root/usr/lib:/opt/rh/devtoolset-8/root/usr/lib64/dyninst:/opt/rh/devtoolset-8/root/usr/lib/dyninst:/usr/local/lib64:/usr/local/lib
