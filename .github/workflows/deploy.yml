@@ -31,8 +31,18 @@ jobs:
     - uses: actions/checkout@v2
       with:
         persist-credentials: false
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        architecture: x64
+    - name: Install Dependencies
+      run: |
+        pip install -U pip
+        pip install -U wheel setuptools twine
+    - name: Build Source Package
+      run: python setup.py sdist
     - name: Build Manylinux Wheels
-      uses: a-feld/python-wheels-manylinux-build@debug
+      uses: RalfG/python-wheels-manylinux-build@f7c9db24751e53d2d3c90edc2b04a9ffaa96cd01
       with:
         python-versions: 'cp27-cp27m cp35-cp35m cp36-cp36m cp37-cp37m cp38-cp38 cp39-cp39'
       env:
