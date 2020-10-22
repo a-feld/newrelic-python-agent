@@ -15,9 +15,11 @@
 name: Deploy
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - deploy-flow
+    tags-ignore:
+      - '**'
 
 
 jobs:
